@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Deep Learning Fundus Image Analysis For Early Detection Of Diabetic Retinopathy</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/webicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab 
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html"></a>DRetina Check</h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Feedback</a></li>
+          <li><a class="nav-link scrollto" href="#doctors">Developers</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Welcome to DRetina Check</h1>
+      <h2>Your Trusted Partner in Quick and Accurate Diabetic Retinopathy Screening. Empowering Your Vision, Ensuring Your Health.</h2>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content">
+              <h3>Why Choose DRetina Check?</h3>
+              <p>"Choose DRetina Check for swift and accurate diabetic retinopathy screening. Our cutting-edge technology ensures reliable results, empowering you to take control of your eye health with ease. With a user-friendly interface and secure data handling, we prioritize your convenience and privacy. Experience peace of mind knowing you're using a trusted partner dedicated to safeguarding your vision. Make DRetina Check your preferred destination for seamless, reliable, and hassle-free retinal health assessments."
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bi bi-receipt"></i>
+                    <h4>Personalized Reports</h4>
+                    <p>Personalized reports tailored to your retinal health, providing actionable insights at your fingertips.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bi bi-database-fill-lock"></i>
+                    <h4>Secure Data Handling</h4>
+                    <p>Your privacy matters. With DRetina Check, rest assured your data is handled with the highest security standards, ensuring confidentiality and peace of mind.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bi bi-clock"></i>
+                    <h4>24 x 7 Accessibility</h4>
+                    <p>Round-the-clock accessibility, empowering you to monitor your eye health anytime, anywhere, and take proactive steps towards a healthier vision.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+          <h3>What is Diabetic Retinopathy ?</h3>
+          <p>Diabetic retinopathy is a diabetes-related complication that affects the eyes. It's caused by damage to the blood vessels of the light-sensitive tissue at the back of the eye (retina). Over time, high blood sugar levels can weaken and damage these blood vessels, leading to vision problems.</p></div>
+          
+          <div class="row">
+            <img src="static/img/Eyeball-Side-View-Diabetic.png"   >
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-diagram-3"></i></div>
+              <h4><a href="">Classification</a></h4>
+              <p>High-resolution images of the retina are taken to assess the presence of abnormalities such as microaneurysms, hemorrhages, and exudates are classified with our Transfer Learning model that can detect and classify types of Diabetic Retinopathy.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-lightbulb"></i></div>
+              <h4><a href="">Generalized suggestions</a></h4>
+              <p>The approach to managing diabetic retinopathy depending on the severity of the condition general suggestions will be suggested for the classified class.</p>
+            </div>
+          </div>
+
+          
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Appointment Section ======= 
+    <section id="appointment" class="appointment section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Make an Appointment</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Make an Appointment</button></div>
+        </form>
+
+      </div>
+    </section><!-- End Appointment Section -->
+    
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Classifier</h2>
+        </div>
+        <section id="about" class="about">
+          <div class="container-fluid">
+            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+              <h3>How can we classify Diabetic Retinopathy ?</h3>
+              <p>The classification of diabetic retinopathy is typically done through a comprehensive eye examination by an ophthalmologist or an optometrist. The eye care professional will evaluate various factors to determine the severity of the condition. Here are some key aspects considered for classification.</p></div>
+              
+              <div class="row">
+                <img src="static/img/classes.png" alt="" class="img-fluid">
+              </div>
+    
+      <div class="container-fluid">
+        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+          <div>
+            <h4>Upload the retina image here to identify the classification of Diabetic Retinopathy</h4>
+        <form action = "http://localhost:5000/" id="upload-file" method="post" enctype="multipart/form-data">
+          <label for="imageUpload" class="upload-label">
+            Choose...
+          </label>
+          <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+        </form>
+        
+    
+        <div class="image-section" style="display:none;">
+          <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+          </div>
+          <div>
+            <button type="button" class="btn btn-success" id="btn-predict">Predict!</button>
+          </div>
+        </div>
+        
+    
+        <div class="loader" style="display:none;"></div>
+    
+        <h3>
+          <span id="result"> </span>
+        </h3>
+          
+        </div>
+
+      </div>
+    </section><script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const imageUpload = document.getElementById('imageUpload');
+        const imagePreview = document.getElementById('imagePreview');
+        const btnPredict = document.getElementById('btn-predict');
+        const resultSpan = document.getElementById('result');
+        const loader = document.querySelector('.loader');
+        const imageSection = document.querySelector('.image-section');
+    
+        imageUpload.addEventListener('change', function () {
+          const file = this.files[0];
+    
+          if (file) {
+            const reader = new FileReader();
+    
+            reader.onload = function (e) {
+              imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview" style="max-width: 200px; max-height: 200px;"/>`;
+              imageSection.style.display = 'block';
+            };
+    
+            reader.readAsDataURL(file);
+          }
+        });
+    
+        btnPredict.addEventListener('click', function () {
+          loader.style.display = 'block';
+    
+          const formData = new FormData(document.getElementById('upload-file'));
+    
+          fetch('http://localhost:5000/predict', {
+            method: 'POST',
+            body: formData,
+          })
+            .then((response) => response.text())
+            .then((result) => {
+              loader.style.display = 'none';
+              console.log(result);  // Log the result to the console for debugging
+              resultSpan.textContent = result;  // Update the content of the result span
+            })
+            .catch((error) => {
+              loader.style.display = 'none';
+              console.error(error);  // Log any errors to the console
+              resultSpan.textContent = 'Error predicting. Please try again.';
+            });
+        });
+      });
+    </script>
+    
+    
+    
+    
+    <!--<script>
+      document.getElementById("imageUpload").onchange = function (e) {
+        const fileInput = e.target;
+        const preview = document.getElementById("imagePreview");
+    
+        while (preview.firstChild) {
+          preview.removeChild(preview.firstChild);
+        }
+    
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+    
+        reader.onload = function (e) {
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          img.classList.add("img-thumbnail");
+          preview.appendChild(img);
+        };
+    
+        reader.readAsDataURL(file);
+        document.querySelector(".image-section").style.display = "block";
+      };
+    </script>-->
+    
+    
+    
+     <!-- ======= Frequently Asked Questions Section ======= -->  
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">What is diabetic retinopathy, and how is it classified? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  Diabetic retinopathy is a complication of diabetes that affects the eyes. It is classified into five stages: no apparent retinopathy, mild nonproliferative retinopathy, moderate nonproliferative retinopathy, severe nonproliferative retinopathy, and proliferative retinopathy. The classification is based on the severity of changes observed in the retina during eye examinations.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">How often should I have eye exams to monitor diabetic retinopathy? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>The frequency of eye exams depends on the severity of diabetic retinopathy. For those with no apparent retinopathy, annual exams are often recommended. As the severity increases, the frequency may be adjusted to every 6 to 12 months or even more frequently for advanced stages.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Can diabetic retinopathy be prevented or reversed? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>While it may not be completely preventable, the progression of diabetic retinopathy can be slowed or halted with good blood sugar control, regular eye exams, and management of blood pressure and cholesterol. Early stages are more manageable, so regular monitoring is crucial.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">What treatments are available for diabetic retinopathy, and do they vary by classification? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>Treatments for diabetic retinopathy include laser surgery, intravitreal injections, and vitrectomy. The specific treatment varies based on the classification and severity of the condition. Less severe cases may require lifestyle interventions and close monitoring, while advanced stages may necessitate surgical or laser interventions.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Are there lifestyle changes that can help manage diabetic retinopathy? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>Yes, lifestyle changes play a crucial role. Maintaining optimal blood sugar levels through a healthy diet, regular exercise, and medication adherence is key. Managing blood pressure and cholesterol levels is also important. Additionally, avoiding smoking and adopting a healthy lifestyle can contribute to overall eye health.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    
+
+    
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Feedback</h2>
+          <p>Feel free give us the Feedback of the user experience or any queries  related to the services.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Submit</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+        <!-- ======= Doctors Section ======= -->
+        <section id="doctors" class="doctors">
+          <div class="container">
+    
+            <div class="section-title">
+              <h2>Developers</h2>
+            </div>
+    
+            <div class="row">
+    
+              <div class="col-lg-6">
+                <div class="member d-flex align-items-start">
+                  <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>Karthik Sankhar V</h4>
+                    <span>Student at Vellore Innstitute Of Technology</span>
+                    <div class="social">
+                      <a href="https://github.com/karthiksankhar"><i class="bi bi-github"></i></a>
+                      <a href="https://www.linkedin.com/in/karthik-sankhar-915bb327a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BGMRZUpPoQT69t0TMyzwxjA%3D%3D"> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="member d-flex align-items-start">
+                  <div class="pic"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>Harish A S</h4>
+                    <span>Student at Vellore Innstitute Of Technology</span>
+                    <div class="social">
+                      <a href="https://github.com/HARISH-AS"><i class="bi bi-github"></i></a>
+                      <a href="https://www.linkedin.com/in/harish-a-s-193906229?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BgcUxHvIWTAeoePHpTZj%2FIA%3D%3D"> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+    
+            </div>
+    
+          </div>
+        </section><!-- End Doctors Section -->
+  </main><!-- End #main -->
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>DRetina Check</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File 
+   -->
+   <script src="static/js/main.js"></script>
+   
+
+</body>
+</html>
